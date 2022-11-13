@@ -1,9 +1,15 @@
 import org.example.PhoneBook;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
 public class PhoneBookTest {
+
 
     @Test
     public void testAdd(){
@@ -32,8 +38,15 @@ public class PhoneBookTest {
 
     @Test
     public void testPrintAllNames(){
+        PrintStream original = System.out;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream tps = new PrintStream(baos);
         PhoneBook phoneBook = new PhoneBook();
-        boolean result = phoneBook.printAllNames();
-        assertTrue(result == true);
+        phoneBook.add("Vasya", "123");
+        System.setOut(tps);
+        phoneBook.printAllNames();
+        System.setOut(original);
+        tps.flush();
+        assertEquals("Vasya", baos.toString().trim());
     }
 }

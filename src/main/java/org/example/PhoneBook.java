@@ -36,8 +36,12 @@ public class PhoneBook {
                 .collect(Collectors.joining());
     }
 
-    public boolean printAllNames(){
-        return false;
+    public void printAllNames(){
+        String names = phoneBook.stream()
+                .map(PhoneBook::getName)
+                .collect(Collectors.joining(","));
+
+        System.out.println(names);
     }
 
     public String getName() {
