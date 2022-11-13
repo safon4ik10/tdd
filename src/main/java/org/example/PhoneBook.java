@@ -29,8 +29,11 @@ public class PhoneBook {
                 .collect(Collectors.joining());
     }
 
-    public boolean findByName(String name){
-       return false;
+    public String findByName(String name){
+        return phoneBook.stream()
+                .filter(pb -> pb.getName().equals(number))
+                .map(PhoneBook::getNumber)
+                .collect(Collectors.joining());
     }
 
     public String getName() {

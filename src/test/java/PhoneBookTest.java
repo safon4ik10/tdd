@@ -26,7 +26,7 @@ public class PhoneBookTest {
     public void testFindByName(){
         PhoneBook phoneBook = new PhoneBook();
         String name = "Vasya";
-        boolean result = phoneBook.findByName(name);
-        assertTrue(result == true);
+        String result = phoneBook.findByName(name);
+        assertTrue(result.isEmpty());
     }
 }
