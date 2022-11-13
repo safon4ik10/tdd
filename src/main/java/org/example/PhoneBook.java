@@ -31,7 +31,7 @@ public class PhoneBook {
 
     public String findByName(String name){
         return phoneBook.stream()
-                .filter(pb -> pb.getName().equals(number))
+                .filter(pb -> pb.getName().equals(name))
                 .map(PhoneBook::getNumber)
                 .collect(Collectors.joining());
     }
