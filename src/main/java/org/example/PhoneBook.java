@@ -36,6 +36,10 @@ public class PhoneBook {
                 .collect(Collectors.joining());
     }
 
+    public boolean printAllNames(){
+        return false;
+    }
+
     public String getName() {
         return name;
     }

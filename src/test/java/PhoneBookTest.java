@@ -29,4 +29,11 @@ public class PhoneBookTest {
         String result = phoneBook.findByName(name);
         assertTrue(result.isEmpty());
     }
+
+    @Test
+    public void testPrintAllNames(){
+        PhoneBook phoneBook = new PhoneBook();
+        boolean result = phoneBook.printAllNames();
+        assertTrue(result == true);
+    }
 }
