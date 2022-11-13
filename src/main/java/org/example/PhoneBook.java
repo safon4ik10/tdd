@@ -29,6 +29,10 @@ public class PhoneBook {
                 .collect(Collectors.joining());
     }
 
+    public boolean findByName(String name){
+       return false;
+    }
+
     public String getName() {
         return name;
     }

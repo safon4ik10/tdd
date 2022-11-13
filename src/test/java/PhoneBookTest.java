@@ -19,7 +19,14 @@ public class PhoneBookTest {
         PhoneBook phoneBook = new PhoneBook();
         String number = "123";
         String result = phoneBook.findByNumber(number);
-
         assertTrue(result.isEmpty());
+    }
+
+    @Test
+    public void testFindByName(){
+        PhoneBook phoneBook = new PhoneBook();
+        String name = "Vasya";
+        boolean result = phoneBook.findByName(name);
+        assertTrue(result == true);
     }
 }
