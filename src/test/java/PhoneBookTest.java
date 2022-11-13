@@ -13,4 +13,12 @@ public class PhoneBookTest {
         int result = phoneBook.add(name, phone);
         assertTrue(result == 1);
     }
+
+    @Test
+    public void testFindByNumber(){
+        PhoneBook phoneBook = new PhoneBook();
+        String number = "123";
+        boolean result = phoneBook.findByNumber(number);
+        assertTrue(result == true);
+    }
 }

@@ -21,6 +21,10 @@ public class PhoneBook {
         return phoneBook.size();
     }
 
+    public boolean findByNumber(String number){
+        return false;
+    }
+
     public String getName() {
         return name;
     }
