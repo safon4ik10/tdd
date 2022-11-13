@@ -1,7 +1,7 @@
 import org.example.PhoneBook;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class PhoneBookTest {
 
@@ -11,14 +11,15 @@ public class PhoneBookTest {
         String name = "Vasya";
         String phone = "+799999999";
         int result = phoneBook.add(name, phone);
-        assertTrue(result == 1);
+        assertEquals(1, result);
     }
 
     @Test
     public void testFindByNumber(){
         PhoneBook phoneBook = new PhoneBook();
         String number = "123";
-        boolean result = phoneBook.findByNumber(number);
-        assertTrue(result == true);
+        String result = phoneBook.findByNumber(number);
+
+        assertTrue(result.isEmpty());
     }
 }
